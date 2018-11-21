@@ -11,34 +11,29 @@ public class StreamTwo {
 		
 		List<Integer> primeList = Arrays.asList(10,7,3,9,11);
 		List<Integer> arePrimes = primeList.stream().filter(num -> isPrime(num)).collect((Collectors.toList()));
-		arePrimes.forEach(System.out::println);
+		arePrimes.forEach(System.out::println); 
 		
 	}
 
 	
 public static boolean isPrime(int x) {
 	
-	       boolean prime = false;
+	      
 	       
-	        if(x == 0) {
-	    	   return prime = false;
-	       }
+	        if(x == 0 | x == 1) {
+	    	   return false;
+	        }
 	        
-	        else if(x == 2) {  // if it is 2
-				return prime = true;	
-			}
-	       
-	        
-	        else if(!(x % 2 == 0)) { //is odd
-				return prime = true;
-			}
-	        
-	        
-			
-	   
-	    	          
-	       
-				return prime = false;
+	        else {
+	        	        
+	          for(int i = 2; i <x/2; i ++ ) {
+	        	if((x % i == 0)) { 
+	        		return false;
+				}
+	        }
+	        return true;
+	        }
+	       	      	        
 }
 		
 	
