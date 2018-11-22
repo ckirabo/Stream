@@ -10,7 +10,12 @@ public class StreamTwo {
 	public static void main (String args[]) {
 		
 		List<Integer> primeList = Arrays.asList(10,7,3,9,11);
-		List<Integer> arePrimes = primeList.stream().filter(num -> isPrime(num)).collect((Collectors.toList()));
+		
+		List<Integer> arePrimes = primeList
+				.stream()
+				.filter(num -> isPrime(num))
+				.collect((Collectors.toList()));
+		
 		arePrimes.forEach(System.out::println); 
 		
 	}
